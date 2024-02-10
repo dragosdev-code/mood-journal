@@ -1,5 +1,5 @@
 import { getServerAuthSession } from "~/server/auth";
-import SignInButton from "./_components/SignInButton";
+import SignInButton from "../components/SignInButton";
 import { redirect } from "next/navigation";
 
 const HomePage = async () => {
@@ -8,11 +8,11 @@ const HomePage = async () => {
     redirect("/home");
   } else {
     return (
-      <div className="flex h-screen w-screen items-center bg-slate-900 text-white">
+      <div className="flex h-full w-full items-center">
         <div className="mx-auto flex w-auto max-w-6xl grow justify-between">
           <div>
-            <h1 className="max-w-sm text-3xl">
-              Welcome to
+            <h1 className="max-w-lg text-4xl">
+              Welcome to{" "}
               <span className="font-bold text-yellow-500">MoodJournal</span>,
               where your words meet wisdom.
             </h1>

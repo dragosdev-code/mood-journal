@@ -1,5 +1,6 @@
 import { PrismaAdapter } from "@next-auth/prisma-adapter";
 import {
+  type Session,
   getServerSession,
   type DefaultSession,
   type NextAuthOptions,
@@ -76,4 +77,5 @@ export const authOptions: NextAuthOptions = {
  *
  * @see https://next-auth.js.org/configuration/nextjs
  */
-export const getServerAuthSession = () => getServerSession(authOptions);
+export const getServerAuthSession = () =>
+  getServerSession(authOptions) as Promise<Required<Session>>;
